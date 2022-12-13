@@ -5,3 +5,8 @@ export type PersonListItem = {
     lastName: string;
 }
 
+export type PersonCreate = {
+    firstName: string;
+    lastName: string;
+}
+
