@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
-import { PersonListItem } from 'src/app/models/people';
+import { PersonListItem } from '../../../../models/people';
 import { PersonDataService } from 'src/app/services/people-data.service';
 
 

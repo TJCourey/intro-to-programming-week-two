@@ -1,5 +1,4 @@
-
-export type PersonListItem = {
+type PersonListItem = {
     id: string;
     firstName: string;
     lastName: string;

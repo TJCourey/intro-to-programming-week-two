@@ -5,22 +5,13 @@ import { DashboardComponent } from './features/dashboard/dashboard.component';
 import { GiftGivingComponent } from './features/gift-giving/gift-giving.component';
 
 const routes: Routes = [
-  {
-    path: 'dashboard',
-    component: DashboardComponent
-  },
-  {
-    path: 'gifts',
-    component: GiftGivingComponent
-  },
-  {
-    path: 'about',
-    component: AboutUsComponent
-  },
-  {
-    path: '**',
-    redirectTo: 'dashboard'
-  }
+  {path: "dashboard",
+    component: DashboardComponent  },
+  {path: "gifts",
+    component: GiftGivingComponent  },
+  {path: "about",
+    component: AboutUsComponent  },
+  
 ];
 
 @NgModule({
