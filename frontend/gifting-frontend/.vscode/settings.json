@@ -1,5 +1,21 @@
 {
+    "editor.linkedEditing": true,
+    "workbench.editor.wrapTabs": true,
+    "workbench.editor.decorations.colors": true,
+    "workbench.editor.decorations.badges": true,
+    "workbench.tree.indent": 25,
+    "breadcrumbs.enabled": true,
+    "html.format.wrapAttributes": "force-aligned",
+    "explorer.openEditors.visible": 0,
+    "editor.formatOnSave": true,
+    "files.autoSave": "onFocusChange",
+    "typescript.check.npmIsInstalled": true,
+    "editor.snippetSuggestions": "top",
+    "workbench.editor.labelFormat": "medium",
+    "editor.minimap.enabled": false,
+    "window.zoomLevel": 0,
     "workbench.colorCustomizations": {
+        "editorIndentGuide.activeBackground": "#ff0000",
         "activityBar.activeBackground": "#fa1b49",
         "activityBar.background": "#fa1b49",
         "activityBar.foreground": "#e7e7e7",
@@ -18,5 +34,12 @@
         "titleBar.inactiveBackground": "#dd053199",
         "titleBar.inactiveForeground": "#e7e7e799"
     },
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": false,
+        "source.fixAll": true
+    },
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "explorer.confirmDelete": false,
+
     "peacock.color": "#dd0531"
 }

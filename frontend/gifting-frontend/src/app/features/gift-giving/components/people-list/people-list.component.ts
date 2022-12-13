@@ -12,6 +12,7 @@ import { PersonDataService } from 'src/app/services/people-data.service';
 })
 export class PeopleListComponent {
 
+ 
   people$: Observable<PersonListItem[]>;
   constructor(private service:PersonDataService) {
     // this is bad. More on that tomorrow.

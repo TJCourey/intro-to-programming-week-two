@@ -4,3 +4,4 @@ export type PersonListItem = {
     firstName: string;
     lastName: string;
 }
+

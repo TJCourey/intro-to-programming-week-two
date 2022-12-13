@@ -11,6 +11,7 @@ import { AboutUsComponent } from './features/about-us/about-us.component';
 import { PeopleListComponent } from './features/gift-giving/components/people-list/people-list.component';
 import {HttpClientModule} from '@angular/common/http';
 import { PersonDataService } from './services/people-data.service';
+import { PeopleEntryComponent } from './features/gift-giving/components/people-entry/people-entry.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,8 +19,8 @@ import { PersonDataService } from './services/people-data.service';
     NavigationComponent,
     DashboardComponent,
     GiftGivingComponent,
-    AboutUsComponent,
-    PeopleListComponent
+    AboutUsComponent, 
+    PeopleListComponent, PeopleEntryComponent
   ],
   imports: [
     BrowserModule,
