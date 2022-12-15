@@ -1,14 +1,16 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { PeopleCommands } from "src/app/state/actions/people-actions";
+import { selectPeopleLoaded } from 'src/app/state';
+import { PeopleCommands } from 'src/app/state/actions/people-actions';
 
 @Component({
   selector: 'app-gift-giving',
   templateUrl: './gift-giving.component.html',
-  styleUrls: ['./gift-giving.component.css']
+  styleUrls: ['./gift-giving.component.css'],
 })
 export class GiftGivingComponent {
-constructor(private readonly store:Store) {
-store.dispatch(PeopleCommands.load())
-}
+  loaded$ = this.store.select(selectPeopleLoaded);
+  constructor(private readonly store: Store) {
+    store.dispatch(PeopleCommands.load());
+  }
 }
