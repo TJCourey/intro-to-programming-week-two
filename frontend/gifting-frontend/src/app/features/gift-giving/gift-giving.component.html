@@ -1,12 +1,14 @@
 <h2>Gift Giving</h2>
+
 <div
-  class="Alert alert-info"
-  *ngif="(loaded$ | async) === false">
-  <h2>Please Hold</h2>
+  class="alert alert-info"
+  *ngIf="(loaded$ | async) === false">
+  <h3>Loading the data. Chill.</h3>
 </div>
+
 <section
   class="row"
-  *ngif="(loaded$ | async) === true">
+  *ngIf="(loaded$ | async) === true">
   <div class="col">
     <app-people-entry></app-people-entry>
   </div>

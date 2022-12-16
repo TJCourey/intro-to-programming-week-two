@@ -12,8 +12,8 @@ export class PersonDataService {
         .pipe(
             map(response => response.data)
         );
-        
     }
+
     addPerson(person:PersonCreate) {
         return this.client.post<PersonListItem>('http://localhost:1337/people', person);
     }

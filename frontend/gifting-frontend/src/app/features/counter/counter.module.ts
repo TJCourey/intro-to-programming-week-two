@@ -1,14 +1,15 @@
-import { Component, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CounterComponent } from './counter.component';
 import { RouterModule, Routes } from '@angular/router';
-import { CountComponent } from './components/count.component';
+import { CountComponent } from './components/count/count.component';
 import { StoreModule } from '@ngrx/store';
 import { featureName, reducers } from './state';
 import { PrefsComponent } from './components/prefs/prefs.component';
 import { EffectsModule } from '@ngrx/effects';
 import { CounterDataEffects } from './state/effects/counter-data.effects';
 
+// /counter/count
 
 const routes: Routes = [
   {
@@ -17,32 +18,31 @@ const routes: Routes = [
     children: [
       {
         path: 'count',
-        component: CountComponent
+        component: CountComponent,
       },
       {
         path: 'prefs',
-        component: PrefsComponent
+        component: PrefsComponent,
       },
       {
         path: '**',
-        redirectTo: 'count'
-      }
-    ]
-  }
-]
-
+        redirectTo: 'count',
+      },
+    ],
+  },
+];
 
 @NgModule({
   declarations: [
     CounterComponent,
     CountComponent,
-    PrefsComponent
+    PrefsComponent,
   ],
   imports: [
     CommonModule,
-    RouterModule.forChild(routes), 
+    RouterModule.forChild(routes),
     StoreModule.forFeature(featureName, reducers),
-    EffectsModule.forFeature([CounterDataEffects])
-  ]
+    EffectsModule.forFeature([CounterDataEffects]),
+  ],
 })
-export class CounterModule { }
+export class CounterModule {}

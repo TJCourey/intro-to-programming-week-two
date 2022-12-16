@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { SelectCountBy } from '../../state';
+import { selectCountingBy } from '../../state';
 import { CounterCommands } from '../../state/actions/count-actions';
 
 @Component({
@@ -9,9 +9,11 @@ import { CounterCommands } from '../../state/actions/count-actions';
   styleUrls: ['./prefs.component.css']
 })
 export class PrefsComponent {
-  countingBy$ = this.store.select(SelectCountBy);
+
+  countingBy$ = this.store.select(selectCountingBy);
   constructor(private store:Store) {}
+
   setCountBy(by: 1 | 3 | 5) {
-    this.store.dispatch(CounterCommands.countby({by}))
+    this.store.dispatch(CounterCommands.countby({by}));
   }
 }

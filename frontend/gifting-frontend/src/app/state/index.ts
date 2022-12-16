@@ -31,6 +31,7 @@ export const selectNumberOfPeople = createSelector(
   selectAllPeople,
   (p) => p.length,
 );
+
 export const selectPeopleLoaded = createSelector(
   selectPeopleFeature,
   (f) => f.loaded,

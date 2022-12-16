@@ -11,8 +11,6 @@ import { PeopleCommands } from 'src/app/state/actions/people-actions';
 })
 export class PeopleEntryComponent {
 
- 
-
   form = this.fb.group({
     firstName: new FormControl<string>('', {
       validators: [Validators.required, Validators.maxLength(100)]
@@ -22,16 +20,10 @@ export class PeopleEntryComponent {
     })
   });
 
- 
-
   get firstName() { return this.form.controls.firstName; }
   get lastName() { return this.form.controls.lastName; }
 
- 
-
   constructor(private fb:FormBuilder, private store:Store) {}
-
- 
 
   demo$!: Observable<PersonListItem>;
   addPerson() {

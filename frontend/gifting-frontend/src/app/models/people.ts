@@ -5,8 +5,13 @@ export type PersonListItem = {
     lastName: string;
 }
 
-export type PersonCreate = {
+
+// export type PersonCreate = {
+//     firstName: string;
+//     lastName: string;
+// }
+
+export interface PersonCreate {
     firstName: string;
     lastName: string;
 }
-

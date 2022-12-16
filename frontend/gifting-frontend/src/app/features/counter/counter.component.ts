@@ -8,8 +8,7 @@ import { CounterCommands } from './state/actions/count-actions';
   styleUrls: ['./counter.component.css']
 })
 export class CounterComponent {
-  constructor(store:Store) {
-    store.dispatch(CounterCommands.load());
-  }
-
+ constructor(store:Store) {
+  store.dispatch(CounterCommands.load());
+ }
 }

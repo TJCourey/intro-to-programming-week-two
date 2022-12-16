@@ -1,8 +1,6 @@
 import { createActionGroup, emptyProps, props } from "@ngrx/store";
 import { CountState } from "../reducers/count-reducer";
 
- 
-
 export const CounterCommands = createActionGroup({
     source: 'Counter Commands',
     events: {
@@ -13,8 +11,6 @@ export const CounterCommands = createActionGroup({
         load: emptyProps()
     }
 })
-
- 
 
 export const CounterDocuments = createActionGroup({
     source: 'Counter Documents',

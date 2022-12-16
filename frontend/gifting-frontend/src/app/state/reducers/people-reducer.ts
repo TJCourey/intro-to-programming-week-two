@@ -1,5 +1,5 @@
-import { EntityState, createEntityAdapter } from '@ngrx/entity';
-import { createReducer, Action, on } from '@ngrx/store';
+import { createEntityAdapter, EntityState } from '@ngrx/entity';
+import { createReducer, on } from '@ngrx/store';
 import { PeopleCommands, PeopleDocuments } from '../actions/people-actions';
 
 export interface PersonEntity {
@@ -21,7 +21,7 @@ const initialState = adapter.getInitialState({
 
 export const reducer = createReducer(
   initialState,
-
+  // on(PeopleCommands.load, (s) => ({ ...s, loaded: false })),
   on(PeopleDocuments.people, (s) => ({ ...s, loaded: true })),
   on(PeopleDocuments.people, (currentState, action) =>
     adapter.setAll(action.payload, currentState),

@@ -1,23 +1,24 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MastheadComponent } from './components/masthead/masthead.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
-import { DashboardComponent } from './features/dashboard/dashboard.component';
-import { GiftGivingComponent } from './features/gift-giving/gift-giving.component';
 import { AboutUsComponent } from './features/about-us/about-us.component';
-import { PeopleListComponent } from './features/gift-giving/components/people-list/people-list.component';
-import {HttpClientModule} from '@angular/common/http';
-import { PersonDataService } from './services/people-data.service';
+import { DashboardComponent } from './features/dashboard/dashboard.component';
 import { PeopleEntryComponent } from './features/gift-giving/components/people-entry/people-entry.component';
-import { ReactiveFormsModule } from '@angular/forms';
-import { StoreModule } from '@ngrx/store';
+import { PeopleListComponent } from './features/gift-giving/components/people-list/people-list.component';
+import { GiftGivingComponent } from './features/gift-giving/gift-giving.component';
+import { PersonDataService } from './services/people-data.service';
 import { reducers } from './state';
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { EffectsModule } from '@ngrx/effects';
-import { PeopleEffects } from './state/effect/people-effects';
+import { PeopleEffects } from './state/effects/people-effects';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,9 +26,9 @@ import { PeopleEffects } from './state/effect/people-effects';
     NavigationComponent,
     DashboardComponent,
     GiftGivingComponent,
-    AboutUsComponent, 
-    PeopleListComponent, 
-    PeopleEntryComponent
+    AboutUsComponent,
+    PeopleListComponent,
+    PeopleEntryComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,9 +37,9 @@ import { PeopleEffects } from './state/effect/people-effects';
     ReactiveFormsModule,
     StoreModule.forRoot(reducers),
     StoreDevtoolsModule.instrument(),
-    EffectsModule.forRoot([PeopleEffects])
+    EffectsModule.forRoot([PeopleEffects]),
   ],
   providers: [PersonDataService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

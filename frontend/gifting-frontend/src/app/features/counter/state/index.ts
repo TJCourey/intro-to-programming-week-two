@@ -1,8 +1,7 @@
 import { ActionReducerMap, createFeatureSelector, createSelector } from "@ngrx/store";
 import { CountData } from "../models";
 
-
-import * as fromCount from './reducers/count-reducer'
+import * as fromCount from './reducers/count-reducer';
 export const featureName = "counter";
 
 export interface CounterState {
@@ -13,10 +12,20 @@ export const reducers: ActionReducerMap<CounterState> = {
     count: fromCount.reducer
 };
 
+// Selector Functions 
+// 1. Create one for the feature
+
+// from the root state, go to "counter"
 const selectFeature = createFeatureSelector<CounterState>(featureName);
-const SelectCountBranch = createSelector(selectFeature, f => f.count);
 
-export const SelectCountCurrent = createSelector(SelectCountBranch, b=> b.current);
-export const SelectCountBy = createSelector(SelectCountBranch, b => b.by);
 
-export const selectCountData = createSelector(SelectCountBranch, b => b as CountData);
+// one per "branch"
+
+const selectCountBranch = createSelector(selectFeature, f => f.count);
+
+
+
+export const selectCountCurrent = createSelector(selectCountBranch, b => b.current);
+export const selectCountingBy = createSelector(selectCountBranch, b => b.by);
+
+export const selectCountData = createSelector(selectCountBranch, b => b as CountData);
