@@ -1,3 +1,5 @@
+using DeveloperLookup;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -9,7 +11,8 @@ var app = builder.Build();
 
 
 app.MapGet("/developer", () => {
-    var response = new OnCallDeveloperResponse("Jeff Gonzalez", "jeff@hypertheory.com");
+    var dev = DeveloperLookupUtils.GetDeveloperName();
+    var response = new OnCallDeveloperResponse(dev, $"{dev}@hypertheory.com");
     return Results.Ok(response);
 });
 app.Run();

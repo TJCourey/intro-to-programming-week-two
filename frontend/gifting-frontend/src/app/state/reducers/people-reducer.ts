@@ -1,6 +1,6 @@
 import { createEntityAdapter, EntityState } from '@ngrx/entity';
 import { createReducer, on } from '@ngrx/store';
-import { PeopleCommands, PeopleDocuments } from '../actions/people-actions';
+import { PeopleDocuments } from '../actions/people-actions';
 
 export interface PersonEntity {
   id: string;
